@@ -1,0 +1,334 @@
+{
+  "$comment": "Cardinal & Oak compliance ticket seed. Create a Linear project called 'Cardinal & Oak — Compliance' before importing. Labels referenced: 'compliance', 'P0', 'P1', 'P2', 'P3', and a label per section (e.g. 'entity', 'marketing', 'privacy'). Use Linear's API or their CLI (`linear create-issue`) to bulk-load. Estimates are in t-shirt size (XS=1hr, S=half-day, M=1day, L=2-3 days, XL=1wk+).",
+  "project": {
+    "name": "Cardinal & Oak — Compliance",
+    "description": "Audit readiness and regulatory compliance tracking for Cardinal & Oak, LLC. See COMPLIANCE.md at repo root for the full controls matrix."
+  },
+  "labels_to_create": [
+    "compliance",
+    "P0-blocker",
+    "P1-blocker",
+    "P2-blocker",
+    "P3-ongoing",
+    "entity",
+    "marketing",
+    "privacy",
+    "foreclosure-rescue",
+    "aml",
+    "fair-housing",
+    "records",
+    "insurance",
+    "ct-realestate",
+    "incident-response"
+  ],
+  "issues": [
+    {
+      "title": "Form Cardinal & Oak, LLC with CT Secretary of State",
+      "description": "File Certificate of Organization with CT SOS. Designate registered agent. Save Cert of Org PDF to /compliance/entity/. Blocker for all downstream work — footer on site already claims 'Cardinal & Oak, LLC'.",
+      "labels": ["compliance", "P0-blocker", "entity"],
+      "estimate": "S",
+      "priority": 1
+    },
+    {
+      "title": "Obtain EIN from IRS",
+      "description": "Apply for EIN after LLC is formed. Online at irs.gov/businesses. Save SS-4 confirmation.",
+      "labels": ["compliance", "P0-blocker", "entity"],
+      "estimate": "XS",
+      "priority": 1
+    },
+    {
+      "title": "Draft and execute Operating Agreement",
+      "description": "Even single-member LLCs benefit from a written OA. Have CT attorney review. Store signed copy in /compliance/entity/.",
+      "labels": ["compliance", "P0-blocker", "entity"],
+      "estimate": "S",
+      "priority": 1
+    },
+    {
+      "title": "Open dedicated business bank account",
+      "description": "No commingling with personal accounts or Financial Holding. Bank needs EIN + Cert of Org. Ask about business-credit-line eligibility for deal funding.",
+      "labels": ["compliance", "P0-blocker", "entity"],
+      "estimate": "S",
+      "priority": 1
+    },
+    {
+      "title": "File CT DRS tax registration (Form REG-1)",
+      "description": "Register for CT tax purposes. Required even if no sales tax nexus.",
+      "labels": ["compliance", "P0-blocker", "entity"],
+      "estimate": "XS",
+      "priority": 1
+    },
+    {
+      "title": "File FinCEN BOI report for the LLC",
+      "description": "Corporate Transparency Act — Beneficial Ownership Information report. Required within 30 days of LLC formation. Different from property-level reporting. Free filing at boiefiling.fincen.gov.",
+      "labels": ["compliance", "P0-blocker", "entity", "aml"],
+      "estimate": "XS",
+      "priority": 1
+    },
+    {
+      "title": "Establish business address (PO Box / UPS Store / physical)",
+      "description": "Must match what appears in Privacy Policy, Terms, Fair Housing page, and site footer. Currently site lists 'Hartford, Connecticut' generically — need a real receive-mail address.",
+      "labels": ["compliance", "P0-blocker", "entity"],
+      "estimate": "XS",
+      "priority": 1
+    },
+    {
+      "title": "Engage CT real-estate attorney for compliance review",
+      "description": "Single most important P0 item. Need an attorney familiar with CT non-financed residential acquisitions, foreclosure-rescue statutes, and CUTPA. Budget: $1,500–$3,000 for initial engagement. Deliverables: purchase agreement template, foreclosure-addendum template, walkthrough of CT-specific disclosure obligations, review of Privacy/Terms/Fair Housing pages.",
+      "labels": ["compliance", "P0-blocker", "foreclosure-rescue"],
+      "estimate": "M",
+      "priority": 1
+    },
+    {
+      "title": "Decide: keep 'Behind on payments' situation on site?",
+      "description": "Highest-liability situation category. If keeping, need attorney-drafted protocol covering CT equity-purchaser statutes, cooling-off periods, mandatory disclosures, non-waivable rights. If removing, edit index.html to drop the 'Pre-foreclosure' situation card and related FAQ text.",
+      "labels": ["compliance", "P0-blocker", "foreclosure-rescue"],
+      "estimate": "XS",
+      "priority": 1
+    },
+    {
+      "title": "Create substantiation file for every claim on the site",
+      "description": "One folder per claim at /compliance/marketing/substantiation/. Each folder: the claim (verbatim), the source/documentation backing it, the date reviewed. Required defense under CUTPA and FTC Act §5. Review quarterly.",
+      "labels": ["compliance", "P0-blocker", "marketing"],
+      "estimate": "S",
+      "priority": 1
+    },
+    {
+      "title": "Set up ad archive system",
+      "description": "Every version of every ad, every placement, every run date. PDFs preferred. Retain 3+ years. Folder: /compliance/marketing/ad-archive/YYYY/MM/.",
+      "labels": ["compliance", "P0-blocker", "marketing", "records"],
+      "estimate": "XS",
+      "priority": 1
+    },
+    {
+      "title": "Publish Privacy Policy at /privacy",
+      "description": "Starter version generated (privacy.html). Review with counsel before relying on it in production. Linked from footer and intake form consent text.",
+      "labels": ["compliance", "P0-blocker", "privacy"],
+      "estimate": "XS",
+      "priority": 1
+    },
+    {
+      "title": "Publish Terms of Use at /terms",
+      "description": "Starter version generated (terms.html). Review with counsel. Linked from footer.",
+      "labels": ["compliance", "P0-blocker", "privacy"],
+      "estimate": "XS",
+      "priority": 1
+    },
+    {
+      "title": "Publish Fair Housing page at /fair-housing",
+      "description": "Non-discrimination policy + complaint channels. Starter version generated (fair-housing.html). Review with counsel.",
+      "labels": ["compliance", "P0-blocker", "fair-housing"],
+      "estimate": "XS",
+      "priority": 1
+    },
+    {
+      "title": "Add tcpa_consent_at column to seller_leads Supabase table",
+      "description": "ALTER TABLE seller_leads ADD COLUMN tcpa_consent_at timestamptz NOT NULL DEFAULT now(). Form must capture consent timestamp on every submit for TCPA defense. Also add ip_address, user_agent columns for evidentiary completeness.",
+      "labels": ["compliance", "P0-blocker", "privacy", "marketing"],
+      "estimate": "XS",
+      "priority": 1
+    },
+    {
+      "title": "Enable Supabase RLS on seller_leads (anon insert-only, service_role full)",
+      "description": "See policy SQL in session notes. Verify anon key cannot SELECT after deploy. Test with a no-auth query from a separate session.",
+      "labels": ["compliance", "P0-blocker", "privacy"],
+      "estimate": "XS",
+      "priority": 1
+    },
+    {
+      "title": "Enable MFA across all infra: Supabase, Vercel, GitHub, Google Workspace",
+      "description": "Non-negotiable for any service holding PII. Use authenticator app (not SMS where avoidable).",
+      "labels": ["compliance", "P0-blocker", "privacy"],
+      "estimate": "XS",
+      "priority": 1
+    },
+    {
+      "title": "Write data retention policy",
+      "description": "Document at /compliance/privacy/retention-policy.md. Leads: 3yr. Transactions: 7yr. Email: 7yr. TCPA consent: 4yr. Link from Privacy Policy.",
+      "labels": ["compliance", "P0-blocker", "privacy", "records"],
+      "estimate": "XS",
+      "priority": 2
+    },
+    {
+      "title": "Write breach-response playbook",
+      "description": "First 72hr actions, escalation contacts, notification obligations under CT statute. /compliance/privacy/breach-response.md.",
+      "labels": ["compliance", "P1-blocker", "privacy", "incident-response"],
+      "estimate": "S",
+      "priority": 2
+    },
+    {
+      "title": "Sign DPAs with all PII vendors",
+      "description": "Supabase, Vercel, SendGrid/Resend, Twilio, Google Workspace. Each has a standard DPA form — fill out, sign, file at /compliance/privacy/dpas/.",
+      "labels": ["compliance", "P1-blocker", "privacy"],
+      "estimate": "S",
+      "priority": 2
+    },
+    {
+      "title": "Build OFAC SDN screening procedure for every seller",
+      "description": "Free API at sanctionssearch.ofac.treas.gov. Build into lead workflow: before any offer is sent, screen seller name + any co-owners. Log result (timestamp, name checked, result, reviewer) at /compliance/aml/ofac-log/YYYY/. Retain 5+ years.",
+      "labels": ["compliance", "P1-blocker", "aml"],
+      "estimate": "S",
+      "priority": 2
+    },
+    {
+      "title": "Write AML policy document",
+      "description": "2-3 pages: screening procedure, red flags, SAR-filing decision tree, recordkeeping standard. /compliance/aml/aml-policy.md.",
+      "labels": ["compliance", "P1-blocker", "aml"],
+      "estimate": "S",
+      "priority": 2
+    },
+    {
+      "title": "Draft proof-of-funds letter template",
+      "description": "Must be producible within 24hr of seller request (stated on site). Either bank letter, capital partner letter, or both. Keep current version at /compliance/financial/pof-template.pdf.",
+      "labels": ["compliance", "P1-blocker", "aml"],
+      "estimate": "XS",
+      "priority": 2
+    },
+    {
+      "title": "Document wire instruction verification procedure",
+      "description": "Callback to known number on every wire instruction. Written procedure shared with closing attorney. Include standard warning-to-seller email about wire fraud.",
+      "labels": ["compliance", "P1-blocker", "aml", "incident-response"],
+      "estimate": "XS",
+      "priority": 2
+    },
+    {
+      "title": "Monitor FinCEN RRE Rule appeal status quarterly",
+      "description": "Rule was vacated by federal district court on March 19, 2026. Appeal possible. If reinstated, reporting obligations kick in for non-financed LLC residential purchases. Calendar as recurring quarterly review.",
+      "labels": ["compliance", "P3-ongoing", "aml"],
+      "estimate": "XS",
+      "priority": 3
+    },
+    {
+      "title": "Bind Commercial General Liability insurance ($1M/$2M)",
+      "description": "Required before first property acquisition. Get quotes from 3 carriers. Compare specifically for coverage of real-estate investment activity, not just general commercial.",
+      "labels": ["compliance", "P1-blocker", "insurance"],
+      "estimate": "S",
+      "priority": 2
+    },
+    {
+      "title": "Bind Errors & Omissions insurance ($500K-$1M)",
+      "description": "Covers professional liability claims — misleading statements, failure-to-disclose, etc. Pair with GL.",
+      "labels": ["compliance", "P1-blocker", "insurance"],
+      "estimate": "S",
+      "priority": 2
+    },
+    {
+      "title": "Bind Cyber Liability insurance ($500K-$1M)",
+      "description": "Required because intake form collects PII. Covers breach response, notification costs, regulatory defense.",
+      "labels": ["compliance", "P1-blocker", "insurance"],
+      "estimate": "S",
+      "priority": 2
+    },
+    {
+      "title": "Confirm lead-paint liability coverage for pre-1978 properties",
+      "description": "Often excluded from standard commercial GL. Request rider or separate policy. Critical — CT has material lead-paint liability exposure for owners.",
+      "labels": ["compliance", "P1-blocker", "insurance"],
+      "estimate": "XS",
+      "priority": 2
+    },
+    {
+      "title": "Confirm auto policy covers business use of personal vehicle",
+      "description": "Visiting properties in a personal car for business purposes may void personal auto coverage in a claim. Call carrier and confirm or add rider.",
+      "labels": ["compliance", "P2-blocker", "insurance"],
+      "estimate": "XS",
+      "priority": 3
+    },
+    {
+      "title": "Build municipal lien search procedure",
+      "description": "Every CT acquisition. Coordinate with title company or closing attorney. Document as checklist item on every transaction file.",
+      "labels": ["compliance", "P2-blocker", "ct-realestate"],
+      "estimate": "XS",
+      "priority": 3
+    },
+    {
+      "title": "Establish relationship with CT title company / closing attorney",
+      "description": "CT is attorney-state — all closings must go through licensed attorney. Get pricing schedule, standard timeline, and draft closing packet format.",
+      "labels": ["compliance", "P2-blocker", "ct-realestate"],
+      "estimate": "S",
+      "priority": 2
+    },
+    {
+      "title": "Build lead-paint disclosure workflow for pre-1978 homes",
+      "description": "Federal + CT requirement. EPA pamphlet delivery + disclosure form on every pre-1978 transaction, both buying and selling. Template form + procedure doc.",
+      "labels": ["compliance", "P2-blocker", "ct-realestate"],
+      "estimate": "S",
+      "priority": 3
+    },
+    {
+      "title": "Build CT Residential Property Condition Disclosure Report workflow (for resales)",
+      "description": "CGS § 20-327b. Required when we resell any property we've acquired. Template + procedure.",
+      "labels": ["compliance", "P2-blocker", "ct-realestate"],
+      "estimate": "XS",
+      "priority": 3
+    },
+    {
+      "title": "Build tenant-notification procedure for occupied rental acquisitions",
+      "description": "If we acquire a rental with tenants in place, there are CT-specific notice requirements. Procedure doc + template notice.",
+      "labels": ["compliance", "P2-blocker", "ct-realestate"],
+      "estimate": "XS",
+      "priority": 3
+    },
+    {
+      "title": "Set up complaint intake and response procedure",
+      "description": "Dedicated email (office@) monitored daily. 5-business-day response SLA. Log every complaint + response + resolution at /compliance/complaints/log.md. Retain 5+ years.",
+      "labels": ["compliance", "P2-blocker", "incident-response"],
+      "estimate": "XS",
+      "priority": 3
+    },
+    {
+      "title": "Maintain regulator contact list",
+      "description": "Pre-loaded contacts for CT DCP, CT AG, HUD, CT CHRO, FinCEN, title insurer, cyber carrier, GL carrier, attorney. At /compliance/contacts.md. Update annually.",
+      "labels": ["compliance", "P2-blocker", "incident-response"],
+      "estimate": "XS",
+      "priority": 3
+    },
+    {
+      "title": "Quarterly review: site claims still accurate?",
+      "description": "Recurring calendar event. Walk every page. Flag anything that's become stale or that we can't still substantiate. Update substantiation file dates.",
+      "labels": ["compliance", "P3-ongoing", "marketing"],
+      "estimate": "XS",
+      "priority": 4
+    },
+    {
+      "title": "Quarterly review: ad archive reconciled",
+      "description": "Every placement in the quarter accounted for with a PDF + publication + date. Spot-check 3 random ones.",
+      "labels": ["compliance", "P3-ongoing", "marketing", "records"],
+      "estimate": "XS",
+      "priority": 4
+    },
+    {
+      "title": "Annual: CT SOS annual report filed",
+      "description": "Calendar annual. Ensure LLC remains in good standing.",
+      "labels": ["compliance", "P3-ongoing", "entity"],
+      "estimate": "XS",
+      "priority": 4
+    },
+    {
+      "title": "Annual: Policy pages reviewed by counsel",
+      "description": "Privacy, Terms, Fair Housing. Verify no statutory changes have made language stale.",
+      "labels": ["compliance", "P3-ongoing", "privacy"],
+      "estimate": "S",
+      "priority": 4
+    },
+    {
+      "title": "Annual: Insurance policies reviewed and renewed",
+      "description": "Check coverage amounts still adequate for portfolio size. Shop rates if premium >15% YoY.",
+      "labels": ["compliance", "P3-ongoing", "insurance"],
+      "estimate": "S",
+      "priority": 4
+    },
+    {
+      "title": "Annual: Vendor DPA renewals reviewed",
+      "description": "Verify vendor list current, all DPAs still in force and current version signed.",
+      "labels": ["compliance", "P3-ongoing", "privacy"],
+      "estimate": "XS",
+      "priority": 4
+    },
+    {
+      "title": "Quarterly: Complaint log review — patterns?",
+      "description": "Read every complaint in the quarter. Look for systemic issues. Address root cause if any.",
+      "labels": ["compliance", "P3-ongoing", "incident-response"],
+      "estimate": "XS",
+      "priority": 4
+    }
+  ]
+}
