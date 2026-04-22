@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Cardinal & Oak — Brand Assets</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0A1128;
+    --ink-2: #1A2342;
+    --muted: #5F6576;
+    --rule: #E2E3E6;
+    --bg-2: #F7F7F5;
+    --gold: #9A7A3C;
+    --gold-2: #C4A263;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font: 400 16px/1.55 'Hanken Grotesk', system-ui, sans-serif; color: var(--ink); background: #fff; -webkit-font-smoothing: antialiased; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 60px 36px; }
+  h1 { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 3rem; letter-spacing: -0.02em; margin-bottom: 12px; }
+  h1 em { font-style: italic; color: var(--gold); }
+  .subtitle { color: var(--muted); font-size: 1.1rem; margin-bottom: 60px; max-width: 560px; }
+  h2 { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 1.8rem; letter-spacing: -0.01em; margin: 60px 0 8px; color: var(--ink); }
+  .section-note { color: var(--muted); font-size: 0.95rem; margin-bottom: 32px; max-width: 640px; }
+  .caps { font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase; font-weight: 600; color: var(--gold); margin-bottom: 24px; display: block; }
+
+  .asset-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 40px; }
+  .asset { border: 1px solid var(--rule); background: #fff; position: relative; overflow: hidden; }
+  .asset.on-dark { background: var(--ink); }
+  .asset-preview { display: flex; align-items: center; justify-content: center; padding: 56px 40px; min-height: 180px; }
+  .asset-preview img { max-width: 100%; max-height: 80px; display: block; }
+  .asset-mark .asset-preview img { max-height: 96px; }
+  .asset-meta { padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--rule); background: #fff; font-size: 0.82rem; }
+  .asset.on-dark .asset-meta { border-top-color: rgba(255,255,255,0.1); background: var(--bg-2); }
+  .asset-meta strong { font-weight: 600; color: var(--ink); }
+  .asset-meta a { font-family: 'Hanken Grotesk'; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); text-decoration: none; padding: 6px 12px; border: 1px solid var(--ink); transition: all 0.2s; font-weight: 600; }
+  .asset-meta a:hover { background: var(--ink); color: #fff; }
+
+  .palette { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 40px; }
+  .swatch { border: 1px solid var(--rule); overflow: hidden; }
+  .swatch-color { height: 120px; }
+  .swatch-info { padding: 16px; }
+  .swatch-info .name { font-family: 'Instrument Serif', serif; font-size: 1.1rem; margin-bottom: 4px; }
+  .swatch-info .hex { font-family: 'Hanken Grotesk'; font-size: 0.82rem; color: var(--muted); letter-spacing: 0.04em; }
+
+  .typography { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+  .type-card { border: 1px solid var(--rule); padding: 40px; }
+  .type-card .sample { font-size: 3rem; margin-bottom: 16px; color: var(--ink); }
+  .type-card .sample-sans { font-family: 'Hanken Grotesk', sans-serif; font-weight: 500; font-size: 1.8rem; }
+  .type-card .sample-serif { font-family: 'Instrument Serif', serif; font-weight: 400; }
+  .type-card .font-name { font-weight: 600; font-size: 0.95rem; color: var(--ink); margin-bottom: 4px; }
+  .type-card .font-use { color: var(--muted); font-size: 0.88rem; }
+
+  .usage { background: var(--bg-2); border: 1px solid var(--rule); padding: 32px; margin-bottom: 20px; }
+  .usage h3 { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 1.3rem; margin-bottom: 16px; }
+  .usage ul { list-style: none; padding: 0; }
+  .usage li { padding: 10px 0; border-bottom: 1px dashed var(--rule); font-size: 0.95rem; color: var(--ink-2); }
+  .usage li:last-child { border-bottom: none; }
+  .usage li strong { color: var(--ink); font-weight: 600; }
+  .usage li em { font-style: italic; color: var(--gold); font-family: 'Instrument Serif', serif; }
+
+  .notice { background: #fff; border: 1px solid var(--gold); border-left: 3px solid var(--gold); padding: 20px 24px; margin-bottom: 30px; font-size: 0.92rem; }
+
+  @media (max-width: 720px) {
+    .asset-grid, .palette, .typography { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <span class="caps">Brand Assets</span>
+  <h1>Cardinal <em>&amp;</em> Oak.</h1>
+  <p class="subtitle">Download-ready logo files, brand colors, typography references, and usage guidance. Everything needed for newspaper ads, social posts, letterhead, and third-party design tools.</p>
+
+  <!-- =============== LOGOS =============== -->
+  <h2>Primary Logos</h2>
+  <p class="section-note">The full horizontal lockup — compass mark plus wordmark plus tagline. Use on letterhead, website header, newspaper ads, and anywhere the full firm name is the focus.</p>
+
+  <div class="asset-grid">
+    <div class="asset">
+      <div class="asset-preview"><img src="logo-primary-dark.svg" alt="Primary logo, dark"></div>
+      <div class="asset-meta"><strong>Primary · Dark</strong><a href="logo-primary-dark.svg" download>Download SVG</a></div>
+    </div>
+    <div class="asset on-dark">
+      <div class="asset-preview"><img src="logo-primary-white.svg" alt="Primary logo, white"></div>
+      <div class="asset-meta"><strong>Primary · White</strong><a href="logo-primary-white.svg" download>Download SVG</a></div>
+    </div>
+  </div>
+
+  <h2>Standalone Mark</h2>
+  <p class="section-note">Compass rose alone — favicon, social avatars, any placement smaller than ~80px where the wordmark would be illegible. The gold center dot references the firm's accent color.</p>
+
+  <div class="asset-grid">
+    <div class="asset asset-mark">
+      <div class="asset-preview"><img src="logo-mark-dark.svg" alt="Mark, dark"></div>
+      <div class="asset-meta"><strong>Mark · Dark</strong><a href="logo-mark-dark.svg" download>Download SVG</a></div>
+    </div>
+    <div class="asset asset-mark on-dark">
+      <div class="asset-preview"><img src="logo-mark-white.svg" alt="Mark, white"></div>
+      <div class="asset-meta"><strong>Mark · White</strong><a href="logo-mark-white.svg" download>Download SVG</a></div>
+    </div>
+  </div>
+
+  <!-- =============== COLORS =============== -->
+  <h2>Color Palette</h2>
+  <p class="section-note">Use these exact hex values for every brand surface. The gold is reserved — one italic ampersand per composition, one center dot per mark. More than that, and the accent loses its weight.</p>
+
+  <div class="palette">
+    <div class="swatch"><div class="swatch-color" style="background: #0A1128"></div><div class="swatch-info"><div class="name">Ink</div><div class="hex">#0A1128</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background: #1A2342"></div><div class="swatch-info"><div class="name">Ink 2</div><div class="hex">#1A2342</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background: #9A7A3C"></div><div class="swatch-info"><div class="name">Gold</div><div class="hex">#9A7A3C</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background: #C4A263"></div><div class="swatch-info"><div class="name">Gold 2</div><div class="hex">#C4A263</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background: #F7F7F5; border-right: 1px solid var(--rule)"></div><div class="swatch-info"><div class="name">Bg Secondary</div><div class="hex">#F7F7F5</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background: #5F6576"></div><div class="swatch-info"><div class="name">Muted</div><div class="hex">#5F6576</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background: #E2E3E6"></div><div class="swatch-info"><div class="name">Rule</div><div class="hex">#E2E3E6</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background: #FFFFFF; border-right: 1px solid var(--rule)"></div><div class="swatch-info"><div class="name">White</div><div class="hex">#FFFFFF</div></div></div>
+  </div>
+
+  <!-- =============== TYPOGRAPHY =============== -->
+  <h2>Typography</h2>
+  <p class="section-note">Two typefaces — one for display (Instrument Serif) and one for everything else (Hanken Grotesk). Both are free from Google Fonts; install locally before exporting logos for print.</p>
+
+  <div class="typography">
+    <div class="type-card">
+      <div class="sample sample-serif">Cardinal <em style="color: var(--gold)">&amp;</em> Oak.</div>
+      <div class="font-name">Instrument Serif · Regular / Italic</div>
+      <div class="font-use">Headlines, display copy, wordmark, pull quotes. The italic style carries the brand's decorative accents — ampersands, numerals, the gold "&" always italic.</div>
+    </div>
+    <div class="type-card">
+      <div class="sample sample-sans">A calmer way to sell a home.</div>
+      <div class="font-name">Hanken Grotesk · Medium / Semibold</div>
+      <div class="font-use">Body copy, navigation, buttons, UI labels, taglines. Used in tracked-out caps at 0.24em for eyebrow labels and "A CONNECTICUT HOME-BUYING FIRM" classifications.</div>
+    </div>
+  </div>
+
+  <!-- =============== USAGE =============== -->
+  <h2>Usage Rules</h2>
+  <p class="section-note">Applied consistently, these keep the brand cohesive across every surface — website, ads, letterhead, email, third-party templates.</p>
+
+  <div class="usage">
+    <h3>Do</h3>
+    <ul>
+      <li><strong>Use the primary logo</strong> wherever space permits (~180px wide or more on screen; 1.25" wide or more in print).</li>
+      <li><strong>Use the mark alone</strong> at small sizes, favicons, social avatars, business-card backs.</li>
+      <li><strong>Maintain clear space</strong> — at minimum, the height of the compass mark on all sides.</li>
+      <li><strong>Keep the gold italic "&amp;"</strong> — it's the single distinguishing accent. Never make it upright, never change its color.</li>
+      <li><strong>Use white variant on dark backgrounds</strong>; dark variant on white and light backgrounds.</li>
+    </ul>
+  </div>
+
+  <div class="usage">
+    <h3>Don't</h3>
+    <ul>
+      <li><strong>Don't stretch, skew, rotate, or recolor</strong> the logo outside the approved dark/white variants.</li>
+      <li><strong>Don't add effects</strong> — drop shadows, glows, gradients, outlines. The logo is flat and stays flat.</li>
+      <li><strong>Don't use the gold as a text color</strong> anywhere except the italic "&" in the wordmark and the center dot of the mark.</li>
+      <li><strong>Don't place the dark logo on dark backgrounds</strong>, or the white logo on light backgrounds. Contrast matters more than any stylistic preference.</li>
+      <li><strong>Don't use Instrument Serif for body copy</strong> — it's a display face and loses legibility below 16pt in print.</li>
+    </ul>
+  </div>
+
+  <!-- =============== CONVERTING FOR PRINT =============== -->
+  <h2>Using These Files</h2>
+
+  <div class="notice">
+    <strong>SVG files are vector.</strong> They scale to any size without loss of quality. Most modern design tools (Canva, Figma, Illustrator, InDesign) accept SVG directly. For platforms that require PNG or PDF (some newspaper ad managers, older printers), convert using the steps below.
+  </div>
+
+  <div class="usage">
+    <h3>Converting SVG to PNG or PDF</h3>
+    <ul>
+      <li><strong>Quick on Mac:</strong> Double-click the SVG to open in Preview → File → Export As → PDF or PNG. For PNG, set resolution to 600dpi for print quality.</li>
+      <li><strong>Free online:</strong> <em>cloudconvert.com</em> → Upload SVG → Select PNG or PDF → Set resolution to 600dpi → Download.</li>
+      <li><strong>In Canva:</strong> Upload SVG → drag onto canvas → Export as PNG or PDF with "print quality" selected.</li>
+      <li><strong>For newspaper ads:</strong> Most CT papers accept PDF or 300dpi PNG. Request a PDF with embedded fonts if the paper supports it.</li>
+    </ul>
+  </div>
+
+  <div class="usage">
+    <h3>If You Give This to a Designer or Agency</h3>
+    <ul>
+      <li>Share the entire <strong>brand-assets</strong> folder — they'll get all variants plus color and font specs.</li>
+      <li>Fonts are free: <em>fonts.google.com/specimen/Instrument+Serif</em> and <em>fonts.google.com/specimen/Hanken+Grotesk</em>.</li>
+      <li>Have them work from SVG files as the source of truth. Rasterized PNGs should only be final output, never the working file.</li>
+    </ul>
+  </div>
+
+</div>
+</body>
+</html>

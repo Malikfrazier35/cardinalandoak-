@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap');
+      .ad-bg { fill: #FFFFFF; }
+      .rule { stroke: #0A1128; stroke-width: 1.2; }
+      .rule-thin { stroke: #0A1128; stroke-width: 0.6; }
+      .eyebrow { font-family: 'Hanken Grotesk', sans-serif; font-weight: 600; font-size: 12px; fill: #9A7A3C; letter-spacing: 0.28em; text-transform: uppercase; }
+      .h1 { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 72px; fill: #0A1128; letter-spacing: -0.02em; }
+      .h1 .italic { font-style: italic; fill: #1A2342; }
+      .h1 .gold { fill: #9A7A3C; }
+      .deck { font-family: 'Hanken Grotesk', sans-serif; font-weight: 400; font-size: 18px; fill: #1A2342; line-height: 1.4; }
+      .deck-muted { fill: #5F6576; }
+      .phone { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 48px; fill: #0A1128; letter-spacing: -0.01em; }
+      .phone-label { font-family: 'Hanken Grotesk', sans-serif; font-weight: 600; font-size: 11px; fill: #5F6576; letter-spacing: 0.24em; text-transform: uppercase; }
+      .bullet-label { font-family: 'Hanken Grotesk', sans-serif; font-weight: 500; font-size: 14px; fill: #0A1128; }
+      .bullet-val { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 16px; fill: #1A2342; }
+      .bullet-val .em { font-style: italic; }
+      .caps-small { font-family: 'Hanken Grotesk', sans-serif; font-weight: 600; font-size: 10px; fill: #5F6576; letter-spacing: 0.2em; text-transform: uppercase; }
+      .roman { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 14px; fill: #9A7A3C; }
+      .eho { font-family: 'Hanken Grotesk', sans-serif; font-size: 9px; font-weight: 500; fill: #5F6576; letter-spacing: 0.18em; text-transform: uppercase; }
+    </style>
+  </defs>
+
+  <!-- White background -->
+  <rect width="900" height="600" class="ad-bg"/>
+
+  <!-- Thick black top rule -->
+  <line x1="40" y1="40" x2="860" y2="40" class="rule"/>
+
+  <!-- Firm identifier in utility bar -->
+  <text x="40" y="62" class="caps-small">Cardinal &amp; Oak &nbsp;·&nbsp; A Connecticut Home-Buying Firm</text>
+  <text x="860" y="62" class="caps-small" text-anchor="end">Written Offers in 24 Hours</text>
+
+  <!-- Thin rule below utility -->
+  <line x1="40" y1="78" x2="860" y2="78" class="rule-thin"/>
+
+  <!-- MAIN CONTENT GRID: Left (copy + headline) / Right (mark + commitments) -->
+
+  <!-- Left column: eyebrow + headline + deck -->
+  <g transform="translate(40, 130)">
+    <text x="0" y="0" class="eyebrow">§ &nbsp;For Connecticut Homeowners</text>
+
+    <!-- Big headline -->
+    <text x="0" y="70" class="h1">A calmer way</text>
+    <text x="0" y="135" class="h1">to sell <tspan class="italic">a home</tspan><tspan class="gold">.</tspan></text>
+
+    <!-- Deck copy -->
+    <text x="0" y="190" class="deck">Direct, all-cash purchases of homes across Connecticut —</text>
+    <text x="0" y="215" class="deck">in any condition, on your timeline. No agents, no</text>
+    <text x="0" y="240" class="deck">commissions, no repairs. A written offer inside one</text>
+    <text x="0" y="265" class="deck">business day.</text>
+
+    <!-- Phone call-to-action block -->
+    <line x1="0" y1="305" x2="420" y2="305" class="rule-thin"/>
+    <text x="0" y="330" class="phone-label">Call Our Office</text>
+    <text x="0" y="385" class="phone">(475) 374-1073</text>
+    <text x="0" y="415" class="deck deck-muted" style="font-size: 14px;">Mon – Sat · 8:00a – 7:00p ET</text>
+    <text x="0" y="433" class="deck deck-muted" style="font-size: 14px;">cardinalandoak.com</text>
+  </g>
+
+  <!-- Right column: compass mark + commitments -->
+  <g transform="translate(560, 130)">
+    <!-- Compass rose, larger -->
+    <g transform="translate(0, 0)">
+      <circle cx="40" cy="40" r="36" fill="none" stroke="#0A1128" stroke-width="1"/>
+      <polygon points="40,9 42,39 40,40 38,39" fill="#0A1128"/>
+      <polygon points="71,40 41,42 40,40 41,38" fill="#0A1128"/>
+      <polygon points="40,71 38,41 40,40 42,41" fill="#0A1128"/>
+      <polygon points="9,40 39,38 40,40 39,42" fill="#0A1128"/>
+      <circle cx="40" cy="40" r="2.2" fill="#9A7A3C"/>
+    </g>
+
+    <!-- "Our Commitments" label -->
+    <text x="100" y="32" class="eyebrow">Our Commitments</text>
+    <text x="100" y="58" class="caps-small">Documented on every offer letter</text>
+
+    <!-- Commitment list -->
+    <g transform="translate(0, 110)">
+      <!-- i. -->
+      <text x="0" y="0" class="roman">i.</text>
+      <text x="30" y="0" class="bullet-label">All-cash offers</text>
+      <text x="260" y="0" class="bullet-val" text-anchor="end"><tspan class="em">No lender delays</tspan></text>
+      <line x1="0" y1="14" x2="260" y2="14" stroke="#D4D6DA" stroke-width="0.5" stroke-dasharray="2 3"/>
+
+      <!-- ii. -->
+      <text x="0" y="42" class="roman">ii.</text>
+      <text x="30" y="42" class="bullet-label">Purchased as-is</text>
+      <text x="260" y="42" class="bullet-val" text-anchor="end"><tspan class="em">Any condition</tspan></text>
+      <line x1="0" y1="56" x2="260" y2="56" stroke="#D4D6DA" stroke-width="0.5" stroke-dasharray="2 3"/>
+
+      <!-- iii. -->
+      <text x="0" y="84" class="roman">iii.</text>
+      <text x="30" y="84" class="bullet-label">Attorney closing</text>
+      <text x="260" y="84" class="bullet-val" text-anchor="end"><tspan class="em">CT attorney</tspan></text>
+      <line x1="0" y1="98" x2="260" y2="98" stroke="#D4D6DA" stroke-width="0.5" stroke-dasharray="2 3"/>
+
+      <!-- iv. -->
+      <text x="0" y="126" class="roman">iv.</text>
+      <text x="30" y="126" class="bullet-label">Your timeline</text>
+      <text x="260" y="126" class="bullet-val" text-anchor="end"><tspan class="em">7 days to months</tspan></text>
+    </g>
+
+    <!-- Fit-for notes -->
+    <g transform="translate(0, 290)">
+      <text x="0" y="0" class="caps-small">Well-suited for:</text>
+      <text x="0" y="22" class="bullet-val" style="font-size: 13px;">Inherited properties · Divorce · Tired</text>
+      <text x="0" y="40" class="bullet-val" style="font-size: 13px;">landlord · Needs significant work ·</text>
+      <text x="0" y="58" class="bullet-val" style="font-size: 13px;">Relocating or downsizing</text>
+    </g>
+  </g>
+
+  <!-- Bottom rule + legal -->
+  <line x1="40" y1="540" x2="860" y2="540" class="rule-thin"/>
+
+  <g transform="translate(40, 565)">
+    <text x="0" y="0" class="eho">Equal Housing Opportunity &nbsp;·&nbsp; Cardinal &amp; Oak, a trade name of 1Financial Holding LLC &nbsp;·&nbsp; Hartford, CT</text>
+  </g>
+</svg>
