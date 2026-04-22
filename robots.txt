@@ -1,0 +1,20 @@
+# Cardinal & Oak — robots.txt
+# https://www.cardinalandoak.com
+
+User-agent: *
+Allow: /
+
+# Disallow form post handler paths (when added)
+# Disallow: /api/
+
+# Block common AI training crawlers if you prefer (uncomment to enable)
+# User-agent: GPTBot
+# Disallow: /
+# User-agent: ClaudeBot
+# Disallow: /
+# User-agent: CCBot
+# Disallow: /
+# User-agent: anthropic-ai
+# Disallow: /
+
+Sitemap: https://www.cardinalandoak.com/sitemap.xml
