@@ -572,26 +572,21 @@ footer li a:hover{color:var(--gold-2)}
       </div>
       <div class="sit">
         <span class="sit-num">ii.</span>
-        <h4>Behind on payments</h4>
-        <p>A private, direct resolution to a mortgage you can no longer keep up with — handled before the situation enters the public record.</p>
-      </div>
-      <div class="sit">
-        <span class="sit-num">iii.</span>
         <h4>Divorce or separation</h4>
         <p>A clean, fast exit from a shared asset so both parties can move forward — without the home becoming another thing to argue about.</p>
       </div>
       <div class="sit">
-        <span class="sit-num">iv.</span>
+        <span class="sit-num">iii.</span>
         <h4>Needs significant work</h4>
         <p>Roof, foundation, water or fire damage, long-deferred maintenance, hoarder situations. Purchased as-is, with no repair obligation on your part.</p>
       </div>
       <div class="sit">
-        <span class="sit-num">v.</span>
+        <span class="sit-num">iv.</span>
         <h4>Tired landlord</h4>
         <p>Non-paying tenants, a rental that's become more burden than income, or a property you're simply ready to be done with.</p>
       </div>
       <div class="sit">
-        <span class="sit-num">vi.</span>
+        <span class="sit-num">v.</span>
         <h4>Relocating or downsizing</h4>
         <p>Moving for work, moving closer to family, retiring out of state, or transitioning to a smaller home — on the schedule you choose.</p>
       </div>
@@ -804,31 +799,31 @@ footer li a:hover{color:var(--gold-2)}
     <div class="form-card">
       <h3>Request an <em>offer.</em></h3>
       <p class="f-hint">We'll respond with a written all-cash offer within one business day.</p>
-      <form onsubmit="event.preventDefault();alert('Thank you. We will be in touch within one business day.');this.reset();">
+      <form action="https://formspree.io/f/REPLACE_WITH_YOUR_FORMSPREE_ID" method="POST">
+        <input type="hidden" name="_subject" value="New seller inquiry — Cardinal & Oak" />
         <div class="f">
           <label>Property Address</label>
-          <input type="text" required placeholder="123 Main Street, Hartford, CT" />
+          <input type="text" name="property_address" required placeholder="123 Main Street, Hartford, CT" />
         </div>
         <div class="f-row">
           <div class="f">
             <label>Your Name</label>
-            <input type="text" required placeholder="Jane Doe" />
+            <input type="text" name="name" required placeholder="Jane Doe" />
           </div>
           <div class="f">
             <label>Phone</label>
-            <input type="tel" required placeholder="(475) 000-0000" />
+            <input type="tel" name="phone" required placeholder="(475) 000-0000" />
           </div>
         </div>
         <div class="f">
           <label>Email</label>
-          <input type="email" required placeholder="jane@example.com" />
+          <input type="email" name="email" required placeholder="jane@example.com" />
         </div>
         <div class="f">
           <label>Situation (optional)</label>
-          <select>
+          <select name="situation">
             <option>— Select if applicable —</option>
             <option>Inherited property</option>
-            <option>Behind on payments</option>
             <option>Divorce or separation</option>
             <option>Needs significant work</option>
             <option>Tired landlord</option>
@@ -837,7 +832,7 @@ footer li a:hover{color:var(--gold-2)}
           </select>
         </div>
         <div class="consent">
-          <input type="checkbox" id="tcpa" required />
+          <input type="checkbox" id="tcpa" name="tcpa_consent" value="Yes, consented on submit" required />
           <label for="tcpa">By submitting, I agree to be contacted by Cardinal &amp; Oak by phone, text, or email about my property. Consent is not a condition of any transaction. Message and data rates may apply. See our <a href="/privacy">Privacy Policy</a> and <a href="/terms">Terms</a>.</label>
         </div>
         <button type="submit" class="btn btn-dark">
