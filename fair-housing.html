@@ -3,92 +3,151 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Equal Housing — Cardinal &amp; Oak</title>
-<meta name="robots" content="index,follow" />
+<title>Equal Housing Opportunity — Cardinal &amp; Oak</title>
+<link rel="canonical" href="https://www.cardinalandoak.com/fair-housing" />
+<meta name="description" content="Cardinal & Oak's commitment to equal housing opportunity and non-discrimination in Connecticut real-estate transactions." />
+<meta name="robots" content="index, follow" />
+<link rel="icon" type="image/svg+xml" href="/logo-mark-dark.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#fff;--bg-2:#F7F7F5;--ink:#0A1128;--ink-2:#1A2342;--muted:#5F6576;--rule:#E2E3E6;--gold:#9A7A3C;--gold-2:#C4A263}
+:root{--bg:#FFFFFF;--bg-2:#F7F7F5;--ink:#0A1128;--ink-2:#1A2342;--muted:#5F6576;--rule:#E2E3E6;--gold:#9A7A3C;--gold-2:#C4A263}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--ink);font:400 16px/1.65 'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--gold-2)}
-a:hover{color:var(--gold)}
+html,body{background:var(--bg);color:var(--ink);font:400 16px/1.7 'Hanken Grotesk',system-ui,sans-serif}
+a{color:inherit}
 .container{max-width:780px;margin:0 auto;padding:0 32px}
-header{border-bottom:1px solid var(--rule);padding:22px 0;background:var(--bg);position:sticky;top:0;z-index:10}
-.head-inner{display:flex;justify-content:space-between;align-items:center}
-.wm{display:inline-flex;align-items:center;gap:12px;border:none}
-.wm-crest{width:34px;height:34px;border:1px solid var(--ink);border-radius:50%;display:grid;place-items:center}
-.wm-name{font-family:'Instrument Serif',serif;font-size:1.2rem;color:var(--ink)}
-.wm-name .amp{font-style:italic;color:var(--gold);padding:0 2px}
-.back{font-size:.85rem;color:var(--muted);border:none}
-.back:hover{color:var(--ink)}
-main{padding:80px 0 120px}
-.eyebrow{font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:18px;display:block}
-h1{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(2.2rem,4vw,3.4rem);line-height:1.05;letter-spacing:-.02em;color:var(--ink);margin-bottom:18px}
+.container-wide{max-width:1200px;margin:0 auto;padding:0 32px}
+.utility{background:var(--ink);color:#CFD2DC;font-size:.74rem;letter-spacing:.08em;padding:10px 0}
+.utility .container-wide{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.utility strong{color:var(--gold-2);font-weight:500;letter-spacing:.14em;text-transform:uppercase;font-size:.7rem}
+.utility a{color:#fff;border-bottom:1px solid rgba(255,255,255,.15)}
+header{border-bottom:1px solid var(--rule);padding:22px 0;background:#fff}
+.head-inner{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.wm{display:inline-flex;align-items:center;gap:14px}
+.wm-crest{width:40px;height:40px;border:1px solid var(--ink);border-radius:50%;display:grid;place-items:center}
+.wm-crest svg{width:22px;height:22px}
+.wm-name{font-family:'Instrument Serif',serif;font-size:1.42rem}
+.wm-name .amp{font-style:italic;color:var(--gold)}
+.wm-sub{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.back-link{font-size:.82rem;font-weight:500;border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .2s}
+.back-link:hover{border-bottom-color:var(--ink)}
+article{padding:60px 0 80px}
+.eyebrow{font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:22px;display:block}
+h1{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(2.4rem,4.5vw,3.2rem);letter-spacing:-.02em;margin-bottom:18px;line-height:1.1}
 h1 em{font-style:italic;color:var(--ink-2)}
-.updated{font-size:.82rem;color:var(--muted);margin-bottom:48px;padding-bottom:32px;border-bottom:1px solid var(--rule)}
-h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:1.65rem;color:var(--ink);margin:44px 0 16px;letter-spacing:-.01em}
-h2:first-of-type{margin-top:0}
-p{margin-bottom:16px;color:var(--ink-2)}
-ul{margin:0 0 16px 22px;color:var(--ink-2)}
-li{margin-bottom:8px}
-.highlight{padding:24px;background:var(--bg-2);border-left:3px solid var(--gold);margin:28px 0;font-family:'Instrument Serif',serif;font-size:1.15rem;line-height:1.5;color:var(--ink)}
-.highlight em{font-style:italic;color:var(--ink-2)}
-footer{border-top:1px solid var(--rule);padding:28px 0;font-size:.82rem;color:var(--muted);text-align:center}
+.meta{color:var(--muted);font-size:.9rem;margin-bottom:44px;padding-bottom:28px;border-bottom:1px solid var(--rule)}
+h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:1.55rem;letter-spacing:-.015em;margin:44px 0 16px;color:var(--ink)}
+h2 em{font-style:italic}
+p{margin-bottom:18px;color:var(--ink-2)}
+ul{list-style:none;padding:0;margin:16px 0 20px}
+ul li{padding:10px 0 10px 26px;position:relative;color:var(--ink-2);border-bottom:1px dashed var(--rule)}
+ul li:last-child{border-bottom:none}
+ul li::before{content:"—";position:absolute;left:0;top:10px;color:var(--gold)}
+.eho-mark{display:flex;align-items:center;gap:14px;padding:20px 22px;background:var(--bg-2);border:1px solid var(--rule);margin:24px 0;border-left:3px solid var(--gold)}
+.eho-mark svg{flex-shrink:0}
+.eho-mark span{font-family:'Instrument Serif',serif;font-style:italic;color:var(--ink);font-size:1.05rem}
+footer{background:var(--ink);color:rgba(255,255,255,.7);padding:40px 0 28px;font-size:.82rem}
+footer .container-wide{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+footer em{font-family:'Instrument Serif',serif;font-style:italic;color:var(--gold-2)}
 </style>
 </head>
 <body>
+
+<div class="utility">
+  <div class="container-wide">
+    <div><strong>Cardinal &amp; Oak</strong><span style="opacity:.7;margin:0 14px">·</span><span style="opacity:.7">A Transparent Connecticut Real-Estate Wholesaler</span></div>
+    <div>Mon – Sat · 8a – 7p ET · <a href="tel:+14753741073">(475) 374-1073</a></div>
+  </div>
+</div>
+
 <header>
-  <div class="container head-inner">
+  <div class="container-wide head-inner">
     <a href="/" class="wm">
-      <span class="wm-crest"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 2L12 22M2 12L22 12M5 5L19 19M19 5L5 19" stroke="#0A1128" stroke-width="0.8" fill="none"/><circle cx="12" cy="12" r="3" stroke="#0A1128" stroke-width="0.8" fill="none"/></svg></span>
-      <span class="wm-name">Cardinal <span class="amp">&amp;</span> Oak</span>
+      <span class="wm-crest">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L12 22M2 12L22 12M5 5L19 19M19 5L5 19" stroke="#0A1128" stroke-width="0.8"/><circle cx="12" cy="12" r="3" stroke="#0A1128" stroke-width="0.8" fill="none"/></svg>
+      </span>
+      <span class="wm-text">
+        <span class="wm-name">Cardinal <span class="amp">&amp;</span> Oak</span>
+        <span class="wm-sub">Transparent Wholesaling</span>
+      </span>
     </a>
-    <a href="/" class="back">← Back to home</a>
+    <a href="/" class="back-link">← Back to Home</a>
   </div>
 </header>
 
-<main>
+<article>
   <div class="container">
-    <span class="eyebrow">Policies</span>
-    <h1>Equal Housing <em>Opportunity.</em></h1>
-    <p class="updated">Last updated: April 21, 2026</p>
 
-    <div class="highlight">
-      Cardinal &amp; Oak does not discriminate against any person in the purchase of residential real property on the basis of <em>race, color, religion, sex, disability, familial status, national origin, sexual orientation, gender identity, age, marital status, lawful source of income, or any other characteristic</em> protected by federal or Connecticut law.
+    <span class="eyebrow">Policy</span>
+    <h1>Equal Housing <em>Opportunity.</em></h1>
+    <p class="meta">Our commitment to non-discrimination in Connecticut real-estate transactions.</p>
+
+    <div class="eho-mark">
+      <svg viewBox="0 0 24 24" fill="none" width="32" height="32">
+        <rect x="3" y="3" width="18" height="18" stroke="#9A7A3C" stroke-width="1" fill="none"/>
+        <path d="M7 14v-3l5-3 5 3v3M9 14v3h6v-3" stroke="#9A7A3C" stroke-width="1" fill="none"/>
+        <circle cx="12" cy="10.5" r="0.8" fill="#9A7A3C"/>
+      </svg>
+      <span>Cardinal &amp; Oak is an Equal Housing Opportunity firm.</span>
     </div>
 
     <h2>Our commitment</h2>
-    <p>We evaluate every property on its merits and every homeowner on the basis of the property and the circumstances, never on the basis of who they are. This commitment applies at every stage — initial inquiry, offer preparation, negotiation, and closing.</p>
+    <p>Cardinal &amp; Oak is committed to the letter and the spirit of United States policy for the achievement of equal housing opportunity throughout the nation. We support an affirmative advertising and marketing program in which there are no barriers to obtaining housing because of race, color, religion, sex, handicap, familial status, or national origin.</p>
 
-    <h2>The laws that govern us</h2>
-    <p>Cardinal &amp; Oak complies with:</p>
+    <h2>Federal protections</h2>
+    <p>The Federal Fair Housing Act prohibits discrimination in the purchase, sale, rental, or financing of residential real estate on the basis of the following protected classes:</p>
     <ul>
-      <li>The federal Fair Housing Act (42 U.S.C. § 3601 et seq.)</li>
-      <li>The Connecticut Fair Housing Act (Conn. Gen. Stat. § 46a-64c)</li>
-      <li>The Connecticut Unfair Trade Practices Act (Conn. Gen. Stat. § 42-110a et seq.)</li>
-      <li>All other applicable federal, state, and local laws prohibiting housing discrimination</li>
+      <li>Race</li>
+      <li>Color</li>
+      <li>National origin</li>
+      <li>Religion</li>
+      <li>Sex (including gender identity and sexual orientation)</li>
+      <li>Familial status (including families with children under 18)</li>
+      <li>Disability</li>
+    </ul>
+
+    <h2>Connecticut protections</h2>
+    <p>Connecticut law extends fair-housing protections beyond the federal list to also prohibit discrimination on the basis of:</p>
+    <ul>
+      <li>Age</li>
+      <li>Marital status</li>
+      <li>Lawful source of income</li>
+      <li>Sexual orientation</li>
+      <li>Gender identity or expression</li>
+      <li>Veteran status</li>
+      <li>Legal hair texture and protective hairstyles (CROWN Act)</li>
+    </ul>
+
+    <h2>How <em>we practice this</em></h2>
+    <p>Cardinal &amp; Oak operates as a real-estate wholesaler — we contract to purchase properties and assign those contracts to qualified cash buyers. In every step of that process, we commit to the following:</p>
+    <ul>
+      <li><strong>Equal evaluation of every property</strong> — based only on condition, location, value, and fit with our network's buying criteria. Never on any characteristic of the seller.</li>
+      <li><strong>Consistent terms</strong> — every homeowner receives the same disclosures, the same three-business-day cancellation right, and the same attorney-handled closing structure.</li>
+      <li><strong>No steering</strong> — we don't direct our buyer network toward or away from any neighborhood based on its demographic composition.</li>
+      <li><strong>Equal advertising reach</strong> — our marketing is conducted on an equal basis across Connecticut communities.</li>
     </ul>
 
     <h2>If you believe you've been discriminated against</h2>
-    <p>If you believe Cardinal &amp; Oak has treated you unfairly on the basis of any protected characteristic, we want to know. Please contact us directly at <a href="mailto:office@cardinalandoak.com">office@cardinalandoak.com</a> so we can investigate.</p>
-    <p>You may also file a complaint with:</p>
-    <ul>
-      <li><strong>U.S. Department of Housing and Urban Development (HUD)</strong> — 1-800-669-9777 or <a href="https://www.hud.gov/program_offices/fair_housing_equal_opp/online-complaint">hud.gov</a></li>
-      <li><strong>Connecticut Commission on Human Rights and Opportunities (CHRO)</strong> — 1-800-477-5737 or <a href="https://portal.ct.gov/CHRO">portal.ct.gov/CHRO</a></li>
-    </ul>
+    <p>If you believe you've experienced housing discrimination, you may file a complaint with the U.S. Department of Housing and Urban Development at hud.gov or by phone at 1-800-669-9777. In Connecticut, complaints may also be filed with the Connecticut Commission on Human Rights and Opportunities at portal.ct.gov/chro or by phone at 1-800-477-5737.</p>
 
-    <h2>Accessibility</h2>
-    <p>If you require this information in an alternative format, or if you have difficulty communicating with us because of a disability, please contact us and we will accommodate you.</p>
+    <h2>Contact us</h2>
+    <p>If you have questions about how Cardinal &amp; Oak practices fair housing, or if you'd like to report a concern about your own experience with us, please contact us directly:</p>
+    <p>Cardinal &amp; Oak<br>
+    A trade name of 1Financial Holding LLC<br>
+    Hartford, Connecticut<br>
+    office@cardinalandoak.com<br>
+    (475) 374-1073</p>
 
-    <h2>Contact</h2>
-    <p>Cardinal &amp; Oak, a trade name of 1Financial Holding LLC<br>
-    <a href="mailto:office@cardinalandoak.com">office@cardinalandoak.com</a><br>
-    <a href="tel:+14753741073">(475) 374-1073</a></p>
   </div>
-</main>
+</article>
 
-<footer>© 2026 · Cardinal &amp; Oak, a trade name of 1Financial Holding LLC · Equal Housing Opportunity</footer>
+<footer>
+  <div class="container-wide">
+    <span>© 2026 &nbsp;·&nbsp; Cardinal &amp; Oak, a trade name of 1Financial Holding LLC</span>
+    <em>— A calmer way to sell a home. —</em>
+  </div>
+</footer>
+
 </body>
 </html>

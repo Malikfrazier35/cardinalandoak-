@@ -1,10 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 80" width="440" height="80">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Hanken+Grotesk:wght@500;600&amp;display=swap');
       .wordmark { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 38px; fill: #FFFFFF; letter-spacing: -0.01em; }
       .amp { font-style: italic; fill: #C4A263; }
-      .tagline { font-family: 'Hanken Grotesk', system-ui, sans-serif; font-weight: 500; font-size: 9px; fill: rgba(255,255,255,0.65); letter-spacing: 0.26em; text-transform: uppercase; }
+      .tagline { font-family: 'Hanken Grotesk', system-ui, sans-serif; font-weight: 500; font-size: 9px; fill: rgba(255,255,255,0.7); letter-spacing: 0.32em; text-transform: uppercase; }
     </style>
   </defs>
 
@@ -19,5 +18,5 @@
   </g>
 
   <text x="80" y="45" class="wordmark">Cardinal <tspan class="amp">&amp;</tspan> Oak</text>
-  <text x="80" y="63" class="tagline">A Connecticut Home-Buying Firm</text>
+  <text x="80" y="63" class="tagline">TRANSPARENT WHOLESALING</text>
 </svg>
