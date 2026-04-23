@@ -72,7 +72,7 @@ nav a:hover{color:var(--ink)}
 .btn-line:hover{background:var(--ink);color:#fff}
 .btn .arrow{transition:transform .25s}
 .btn:hover .arrow{transform:translateX(4px)}
-@media (max-width:980px){nav{display:none}.head-inner{grid-template-columns:1fr auto}}
+@media (max-width:980px){nav{display:none}.head-inner{grid-template-columns:1fr auto}.hamburger{display:block}}
 @media (max-width:620px){.head-phone{display:none}.utility .u-left span:nth-of-type(n+3){display:none}}
 
 /* HERO - investor framing, subtly different tone from main site */
@@ -212,6 +212,49 @@ footer li a:hover{color:var(--gold-2)}
 @media (max-width:900px){.foot-top{grid-template-columns:1fr 1fr;gap:40px}.foot-brand{grid-column:span 2}}
 @media (max-width:520px){.foot-top{grid-template-columns:1fr}.foot-brand{grid-column:span 1}}
 ::selection{background:var(--ink);color:var(--gold-2)}
+
+/* === MOBILE NAVIGATION (hamburger + drawer) === */
+.hamburger{display:none;width:32px;height:32px;background:transparent;border:none;cursor:pointer;position:relative;padding:0;margin-right:4px}
+.hamburger span{position:absolute;left:4px;right:4px;height:1.5px;background:var(--ink);transition:all .3s ease;border-radius:1px}
+.hamburger span:nth-child(1){top:10px}
+.hamburger span:nth-child(2){top:16px}
+.hamburger span:nth-child(3){top:22px}
+.hamburger.open span:nth-child(1){top:16px;transform:rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){top:16px;transform:rotate(-45deg)}
+
+.drawer-overlay{position:fixed;inset:0;background:rgba(10,17,40,.45);z-index:99;opacity:0;pointer-events:none;transition:opacity .3s ease;backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
+.drawer-overlay.open{opacity:1;pointer-events:auto}
+
+.mobile-drawer{position:fixed;top:0;right:0;height:100vh;width:min(86vw,380px);background:#fff;z-index:100;transform:translateX(100%);transition:transform .35s cubic-bezier(.2,.8,.3,1);box-shadow:-10px 0 50px rgba(10,17,40,.18);display:flex;flex-direction:column;overflow-y:auto}
+.mobile-drawer.open{transform:translateX(0)}
+.mobile-drawer-inner{padding:24px 32px 32px;display:flex;flex-direction:column;min-height:100%}
+.drawer-top{display:flex;justify-content:space-between;align-items:center;padding-bottom:20px;border-bottom:1px solid var(--rule)}
+.drawer-top .drawer-brand{font-family:'Instrument Serif',serif;font-size:1.2rem;color:var(--ink);letter-spacing:-.005em}
+.drawer-top .drawer-brand .amp{font-style:italic;color:var(--gold)}
+.drawer-close{width:38px;height:38px;border:1px solid var(--rule);border-radius:50%;display:grid;place-items:center;cursor:pointer;color:var(--ink);background:transparent;transition:all .2s;padding:0}
+.drawer-close:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.drawer-close svg{display:block}
+
+.mobile-nav{margin-top:20px;flex:1;display:flex;flex-direction:column}
+.mobile-nav a{font-family:'Instrument Serif',serif;font-size:1.45rem;color:var(--ink);padding:16px 0;border-bottom:1px solid var(--rule);font-weight:400;letter-spacing:-.01em;transition:color .2s;display:flex;align-items:center;justify-content:space-between}
+.mobile-nav a:hover{color:var(--gold)}
+.mobile-nav a.mobile-nav-accent{color:var(--gold);font-weight:500;margin-top:10px;padding-top:22px;border-top:1px solid var(--rule);border-bottom:none}
+.mobile-nav a.mobile-nav-accent::after{content:"→";margin-left:10px;font-size:1.2rem}
+
+.drawer-foot{padding-top:24px;margin-top:24px;border-top:1px solid var(--rule);display:flex;flex-direction:column;gap:4px}
+.drawer-phone-label{font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.drawer-phone{font-family:'Instrument Serif',serif;font-size:1.5rem;color:var(--ink);letter-spacing:-.005em;margin-top:2px}
+.drawer-hours{font-size:.82rem;color:var(--muted);margin-top:4px}
+
+body.drawer-open{overflow:hidden}
+
+/* Collapse 2-column form rows + county/property checkbox grids on narrow phones */
+@media (max-width:520px){
+  .f-row{grid-template-columns:1fr}
+  .check-grid{grid-template-columns:1fr}
+  .form-card{padding:32px 24px}
+}
 </style>
 </head>
 <body>
@@ -263,6 +306,11 @@ footer li a:hover{color:var(--gold-2)}
         Join the Network
         <span class="arrow">→</span>
       </a>
+      <button class="hamburger" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </div>
 </header>
@@ -656,6 +704,49 @@ footer li a:hover{color:var(--gold-2)}
     </div>
   </div>
 </footer>
+
+<div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+<aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true" aria-label="Mobile navigation">
+  <div class="mobile-drawer-inner">
+    <div class="drawer-top">
+      <span class="drawer-brand">Cardinal <span class="amp">&amp;</span> Oak</span>
+      <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="mobile-nav">
+      <a href="#flow">Deal Flow</a>
+      <a href="#intake">Investor Application</a>
+      <a href="#faq">Questions</a>
+      <a href="/how-wholesaling-works">What Is Wholesaling?</a>
+      <a href="/" class="mobile-nav-accent">For Homeowners</a>
+    </nav>
+    <div class="drawer-foot">
+      <span class="drawer-phone-label">Direct Line</span>
+      <a href="tel:+14753741073" class="drawer-phone">(475) 374-1073</a>
+      <span class="drawer-hours">Mon – Sat · 8a – 7p ET</span>
+    </div>
+  </div>
+</aside>
+
+<script>
+(function(){
+  var menuBtn=document.getElementById('menuToggle');
+  var drawer=document.getElementById('mobileDrawer');
+  var overlay=document.getElementById('drawerOverlay');
+  var closeBtn=document.getElementById('drawerClose');
+  if(!menuBtn||!drawer)return;
+  function open(){menuBtn.classList.add('open');menuBtn.setAttribute('aria-expanded','true');drawer.classList.add('open');drawer.setAttribute('aria-hidden','false');overlay.classList.add('open');document.body.classList.add('drawer-open');}
+  function close(){menuBtn.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');drawer.classList.remove('open');drawer.setAttribute('aria-hidden','true');overlay.classList.remove('open');document.body.classList.remove('drawer-open');}
+  menuBtn.addEventListener('click',function(){drawer.classList.contains('open')?close():open();});
+  closeBtn.addEventListener('click',close);
+  overlay.addEventListener('click',close);
+  Array.prototype.forEach.call(document.querySelectorAll('.mobile-nav a'),function(a){a.addEventListener('click',close);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
 
 </body>
 </html>
